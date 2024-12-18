@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calculadora</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="num1" placeholder="Número 1">
+        <input type="text" id="num2" placeholder="Número 2">
+        <select id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="power">x^y</option>
+            <option value="factorial">!</option>
+        </select>
+        <button type="button" onclick="calculate()">Calcular</button>
+    </form>
+    <div id="result"></div>
+    <script >
+        function calculate() {
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+    var operation = document.getElementById("operation").value;
+    var result;
+
+    switch (operation) {
+        case "add":
+            result = add(num1, num2);
+            break;
+        case "subtract":
+            result = subtract(num1, num2);
+            break;
+        case "multiply":
+            result = multiply(num1, num2);
+            break;
+        case "divide":
+            result = divide(num1, num2);
+            break;
+        case "power":
+            result = power(num1, num2);
+            break;
+        case "factorial":
+            result = factorial(num1);
+            break;
+    }
+
+    document.getElementById("result").innerText = "Resultado: " + result;
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    return a / b;
+}
+
+function power(a, b) {
+    return Math.pow(a, b);
+}
+
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+    </script>
+</body>
+</html>

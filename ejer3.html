@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ejercicio 3</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var j = prompt("Introduzca el vcalor de n, para los factoriales:");
+        var n = parseInt(j);
+        var total = 0;
+
+        for (var i = 1; i <= n; i++) {
+            var f = 1;
+            for (var h = 1; h <= i; h++) {
+                f = f * h;
+            }
+            total = total + f;
+            document.write(i + "! = " + f + "<br>");
+        }
+
+        document.write("El factorial total es: " + total);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>S. Fibonacci</title>
+</head>
+<body>
+    <script>
+        function generateFibonacci(n) {
+    var fibonacci = [0, 1];
+    for (var i = 2; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    return fibonacci.slice(0, n);
+}
+
+var n = parseInt(prompt("Introduzca elvalor para los termiunos:"));
+var fibonacci = generateFibonacci(n);
+document.write("Serie Fibonacci: " + fibonacci.join(", "));
+
+    </script>
+</body>
+</html>

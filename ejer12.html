@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Palíndromo</title>
+</head>
+<body>
+    <script >
+        function isPalindrome(word) {
+    var normalized = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+    var reversed = normalized.split("").reverse().join("");
+    return normalized === reversed;
+}
+
+var word = prompt("Introduzca una palabra:");
+if (isPalindrome(word)) {
+    document.write(word + " Es un palíndromo");
+} else {
+    document.write(word + " No es un palíndromo");
+}
+
+    </script>
+</body>
+</html>

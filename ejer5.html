@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rotar Dígitos Pares</title>
+</head>
+<body>
+    <script>
+        function rotateEvenDigitsRight(number) {
+    var numStr = number.toString();
+    if (numStr.length < 6) {
+        return "El número debe tener al menos 6 dígitos.";
+    }
+
+    var evenDigits = [];
+    for (var char of numStr) {
+        if (parseInt(char) % 2 === 0) {
+            evenDigits.push(char);
+        }
+    }
+
+    if (evenDigits.length === 0) return number;
+
+    var rotatedEvenDigits = [evenDigits.pop(), ...evenDigits];
+    var result = "";
+    var evenIndex = 0;
+
+    for (var char of numStr) {
+        if (parseInt(char) % 2 === 0) {
+            result += rotatedEvenDigits[evenIndex++];
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+var num = parseInt(prompt("Introduzca un número de >= a 6 dígitos:"));
+document.write("Número: " + num + "<br>");
+document.write("Rotación de dígitos pares a la derecha: " + rotateEvenDigitsRight(num));
+
+    </script>
+</body>
+</html>

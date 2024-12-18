@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>N Romanos</title>
+</head>
+<body>
+    <script>
+        function integerToRoman(num) {
+    var roman = "";
+    var romanNumerals = [
+        ["M", 1000],
+        ["CM", 900],
+        ["D", 500],
+        ["CD", 400],
+        ["C", 100],
+        ["XC", 90],
+        ["L", 50],
+        ["XL", 40],
+        ["X", 10],
+        ["IX", 9],
+        ["V", 5],
+        ["IV", 4],
+        ["I", 1]
+    ];
+
+    for (var i = 0; i < romanNumerals.length; i++) {
+        while (num >= romanNumerals[i][1]) {
+            roman += romanNumerals[i][0];
+            num -= romanNumerals[i][1];
+        }
+    }
+
+    return roman;
+}
+
+var num = parseInt(prompt("Introduzca un número entero:"));
+document.write("Número romano: " + integerToRoman(num));
+
+    </script>
+</body>
+</html>

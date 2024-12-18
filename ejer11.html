@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>S. Exponencial</title>
+</head>
+<body>
+    <script>
+        function generateExponentialSeries(n, x) {
+    var series = [];
+    for (var i = 0; i < n; i++) {
+        var term = Math.pow(x, i) / factorial(i);
+        series.push(term.toFixed(5)); // Limitar a 5 decimales
+    }
+    return series;
+}
+
+function factorial(num) {
+    if (num === 0 || num === 1) return 1;
+    return num * factorial(num - 1);
+}
+var n = parseInt(prompt("Introduzca el valor del termino:"));
+var x = parseFloat(prompt("Introduzca el valor de x:"));
+var series = generateExponentialSeries(n, x);
+document.write("Serie Exponencial: " + series.join(", "));
+
+    </script>
+</body>
+</html>

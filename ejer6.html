@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dígitos Repetidos</title>
+</head>
+<body>
+    <script >
+        function findRepeatedDigits(number) {
+    if (number <= 100) {
+        return "El número debe ser mayor que 100.";
+    }
+
+    var numStr = number.toString();
+    var digitCount = {};
+    var repeatedDigits = [];
+
+    for (var char of numStr) {
+        digitCount[char] = (digitCount[char] || 0) + 1;
+    }
+
+    for (var char in digitCount) {
+        if (digitCount[char] > 1) {
+            repeatedDigits.push(char);
+        }
+    }
+
+    return repeatedDigits.length ? repeatedDigits.join(", ") : "No hay dígitos repetidos.";
+}
+
+var num = parseInt(prompt("Introduzca un número > a 100:"));
+document.write("Dígitos repetidos: " + findRepeatedDigits(num));
+
+    </script>
+</body>
+</html>

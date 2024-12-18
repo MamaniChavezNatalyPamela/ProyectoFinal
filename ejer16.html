@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Matriz de Pascal</title>
+</head>
+<body>
+    <script>
+        function generatePascalMatrix(n) {
+    var matrix = [];
+
+    for (var i = 0; i < n; i++) {
+        matrix[i] = [];
+        for (var j = 0; j <= i; j++) {
+            if (j === 0 || j === i) {
+                matrix[i][j] = 1;
+            } else {
+                matrix[i][j] = matrix[i - 1][j - 1] + matrix[i - 1][j];
+            }
+        }
+    }
+
+    return matrix;
+}
+
+var n = parseInt(prompt("Introduzca el valor de n para filas:"));
+var matrix = generatePascalMatrix(n);
+
+document.write("Matriz de Pascal:<br>");
+for (var i = 0; i < matrix.length; i++) {
+    document.write(matrix[i].join(" ") + "<br>");
+}
+
+    </script>
+</body>
+</html>

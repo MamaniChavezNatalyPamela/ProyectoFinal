@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rotar Números</title>
+</head>
+<body>
+    <script>
+        function rotateLeft(number) {
+    var numStr = number.toString();
+    return numStr.slice(1) + numStr[0];
+}
+
+function rotateRight(number) {
+    var numStr = number.toString();
+    return numStr[numStr.length - 1] + numStr.slice(0, -1);
+}
+
+var num = parseInt(prompt("Introduzca el numero a rotar:"));
+document.write("Número: " + num + "<br>");
+document.write("Rotación a la izquierda: " + rotateLeft(num) + "<br>");
+document.write("Rotación a la derecha: " + rotateRight(num));
+
+    </script>
+</body>
+</html>

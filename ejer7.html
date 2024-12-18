@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Capicúa</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(number) {
+    var numStr = number.toString();
+    var reversedStr = numStr.split("").reverse().join("");
+    return numStr === reversedStr;
+}
+
+var num = parseInt(prompt("Introduzca un número positivo:"));
+if (isPalindrome(num)) {
+    document.write(num + " Es capicúa");
+} else {
+    document.write(num + " No es capicúa");
+}
+
+    </script>
+</body>
+</html>
